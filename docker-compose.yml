@@ -5,7 +5,7 @@ services:
     build: ./
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./app/:/usr/src/app/
+      - './backend:/backend'
     ports:
       - 8000:8000
 
@@ -26,7 +26,7 @@ services:
     entrypoint: celery
     command: -A drf_auth_with_celery worker --loglevel=info
     volumes:
-      - ./api:/app
+      - './backend:/backend'
     links:
       - redis
     depends_on:
