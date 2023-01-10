@@ -1,5 +1,5 @@
 """
-WSGI config for drf_auth_with_celery project.
+WSGI config for fabrika project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'drf_auth_with_celery.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fabrika.settings')
 
 application = get_wsgi_application()
