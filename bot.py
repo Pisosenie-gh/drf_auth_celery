@@ -30,11 +30,8 @@ async def set_token(message:types.Message, state: FSMContext):
 
     async with state.proxy() as proxy:
         proxy['token'] = message.text
-        print(message)
         token = message["text"]
-        print(message["text"])
         chat_id = message["chat"]["id"]
-        print(chat_id)
         try:
             patch = requests.patch(f"http://85.198.91.34:8000/api/chat-id/{token}/", json={"chat_id": str(chat_id)})
             print(patch.status_code)
